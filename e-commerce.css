@@ -1,0 +1,216 @@
+/* Reset some basic styles for better cross-browser compatibility */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles for body and layout */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #f4f4f4;
+    background-color: #121212; /* Dark background for elegance */
+    padding: 0 20px;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Header and Navigation */
+header {
+    background-color: #1f1f1f; /* Slightly lighter than the body for distinction */
+    color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e91e63; /* Accent color for hover effect */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #e91e63; /* Accent color */
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Main content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    padding-top: 20px;
+}
+
+.product {
+    background: #1f1f1f; /* Matching header color */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.product-image img {
+    max-width: 100%;
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-details {
+    padding: 20px;
+    flex: 1;
+}
+
+.product-details h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #fff; /* Light text for contrast */
+}
+
+.price {
+    color: #e91e63; /* Accent color */
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.description {
+    margin-bottom: 20px;
+    color: #ccc; /* Softer light color for description */
+}
+
+.cta {
+    background-color: #e91e63; /* Accent color for CTA */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #c2185b;
+    transform: scale(1.05);
+}
+
+.confirmation-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: green;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+/* Section styles */
+section {
+    max-width: 800px;
+    padding: 20px;
+    margin-bottom: 40px;
+    background: #1f1f1f; /* Matching other sections */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #fff; /* Light text for contrast */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    color: #ccc; /* Softer light color for footer text */
+    background-color: #1f1f1f; /* Matching header color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column;
+    }
+    
+    .product-image {
+        width: 100%;
+    }
+    
+    .product-details {
+        padding: 15px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+/* Add smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
